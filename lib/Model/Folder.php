@@ -55,8 +55,8 @@ class Folder implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'jsonapi' => '\Autodesk\Forge\Client\Model\JsonApiVersionJsonapi',
-        'data' => '\Autodesk\Forge\Client\Model\JsonApiResource',
-        'included' => '\Autodesk\Forge\Client\Model\JsonApiResource[]',
+        'data' => '\Autodesk\Forge\Client\Model\JsonApiResource[]',
+        'included' => '\Autodesk\Forge\Client\Model\Version[]',
         'links' => '\Autodesk\Forge\Client\Model\JsonApiLinks',
         'id' => 'string',
         'type' => 'string',

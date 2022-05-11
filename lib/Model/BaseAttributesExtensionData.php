@@ -1,6 +1,6 @@
 <?php
 /**
- * JsonApiLinks
+ * BaseAttributesExtensionData
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace Autodesk\Forge\Client\Model;
 use \ArrayAccess;
 
 /**
- * JsonApiLinks Class Doc Comment
+ * BaseAttributesExtensionData Class Doc Comment
  *
  * @category    Class
- * @description resource specific links
+ * @description Children Manifest
  * @package     Autodesk\Forge\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class JsonApiLinks implements ArrayAccess
+class BaseAttributesExtensionData implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,15 +48,15 @@ class JsonApiLinks implements ArrayAccess
      * The original name of the model.
      * @var string
      */
-    protected static $swaggerModelName = 'json_api_links';
+    protected static $swaggerModelName = 'base_attributes_extension_data';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'self' => '\Autodesk\Forge\Client\Model\JsonApiLink',
-        'webView' => '\Autodesk\Forge\Client\Model\JsonApiLink',
+        'model_guid' => 'string',
+        'project_guid' => 'string',
     ];
 
     /**
@@ -72,8 +72,8 @@ class JsonApiLinks implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'self' => 'self',
-        'webView' => 'webView',
+        'model_guid' => 'modelGuid',
+        'project_guid' => 'projectGuid',
     ];
 
 
@@ -82,8 +82,8 @@ class JsonApiLinks implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'self' => 'setSelf',
-        'webView' => 'setWebView',
+        'model_guid' => 'setModelGuid',
+        'project_guid' => 'setProjectGuid',
     ];
 
 
@@ -92,8 +92,8 @@ class JsonApiLinks implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'self' => 'getSelf',
-        'webView' => 'getWebView',
+        'model_guid' => 'getModelGuid',
+        'project_guid' => 'getProjectGuid',
     ];
 
     public static function attributeMap()
@@ -111,9 +111,7 @@ class JsonApiLinks implements ArrayAccess
         return self::$getters;
     }
 
-    
 
-    
 
     /**
      * Associative array for storing property values
@@ -127,8 +125,8 @@ class JsonApiLinks implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['self'] = isset($data['self']) ? $data['self'] : null;
-        $this->container['webView'] = isset($data['webView']) ? $data['webView'] : null;
+        $this->container['model_guid'] = isset($data['model_guid']) ? $data['model_guid'] : null;
+        $this->container['project_guid'] = isset($data['project_guid']) ? $data['project_guid'] : null;
     }
 
     /**
@@ -151,52 +149,52 @@ class JsonApiLinks implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 
     /**
-     * Gets self
-     * @return \Autodesk\Forge\Client\Model\JsonApiLink
+     * Gets model_guid
+     * @return string
      */
-    public function getSelf()
+    public function getModelGuid()
     {
-        return $this->container['self'];
+        return $this->container['model_guid'];
     }
 
     /**
-     * Sets self
-     * @param \Autodesk\Forge\Client\Model\JsonApiLink $self
+     * Sets model_guid
+     * @param string $model_guid
      * @return $this
      */
-    public function setSelf($self)
+    public function setModelGuid($model_guid)
     {
-        $this->container['self'] = $self;
+        $this->container['model_guid'] = $model_guid;
 
         return $this;
     }
 
+
     /**
-     * Gets webView
-     * @return \Autodesk\Forge\Client\Model\JsonApiLink
+     * Gets project_guid
+     * @return string
      */
-    public function getWebView()
+    public function getProjectGuid()
     {
-        return $this->container['webView'];
+        return $this->container['project_guid'];
     }
 
     /**
-     * Sets webView
-     * @param \Autodesk\Forge\Client\Model\JsonApiLink $webView
+     * Sets project_guid
+     * @param string $project_guid
      * @return $this
      */
-    public function setWebView($webView)
+    public function setProjectGuid($project_guid)
     {
-        $this->container['webView'] = $webView;
+        $this->container['project_guid'] = $project_guid;
 
         return $this;
     }
-
+	
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

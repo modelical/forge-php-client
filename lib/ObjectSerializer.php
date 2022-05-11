@@ -279,6 +279,12 @@ class ObjectSerializer
                 }
             }
             $instance = new $class();
+				
+			if ($instance::swaggerTypes() == [])
+			{
+				return json_encode($data);
+			}
+				
             foreach ($instance::swaggerTypes() as $property => $type) {
                 $propertySetter = $instance::setters()[$property];
 

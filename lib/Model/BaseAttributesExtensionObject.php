@@ -57,7 +57,7 @@ class BaseAttributesExtensionObject implements ArrayAccess
         'type' => 'string',
         'version' => 'string',
         'schema' => '\Autodesk\Forge\Client\Model\JsonApiLink',
-        'data' => 'object',
+        'data' => '\Autodesk\Forge\Client\Model\BaseAttributesExtensionData',
     ];
 
     /**
