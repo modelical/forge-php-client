@@ -276,19 +276,19 @@ class FoldersApi extends AbstractApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Autodesk\Forge\Client\Model\Version',
+                '\Autodesk\Forge\Client\Model\Folder',
                 '/data/v1/projects/{project_id}/folders/{folder_id}/contents'
             );
 
             return [
-                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\Version', $httpHeader),
+                $this->apiClient->getSerializer()->deserialize($response, '\Autodesk\Forge\Client\Model\Folder', $httpHeader),
                 $statusCode,
                 $httpHeader,
             ];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\Version', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Autodesk\Forge\Client\Model\Folder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
