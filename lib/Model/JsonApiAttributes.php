@@ -55,6 +55,8 @@ class JsonApiAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'display_name' => 'string',
+        'extension' => '\Autodesk\Forge\Client\Model\BaseAttributesExtensionObject',
     ];
 
     /**
@@ -70,6 +72,8 @@ class JsonApiAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'display_name' => 'displayName',
+        'extension' => 'extension',
     ];
 
 
@@ -78,6 +82,8 @@ class JsonApiAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'display_name' => 'setDisplayName',
+        'extension' => 'setExtension',
     ];
 
 
@@ -86,6 +92,8 @@ class JsonApiAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'display_name' => 'getDisplayName',
+        'extension' => 'getExtension',
     ];
 
     public static function attributeMap()
@@ -105,8 +113,6 @@ class JsonApiAttributes implements ArrayAccess
 
     
 
-    
-
     /**
      * Associative array for storing property values
      * @var mixed[]
@@ -119,6 +125,8 @@ class JsonApiAttributes implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['display_name'] = isset($data['display_name']) ? $data['display_name'] : null;
+        $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
     }
 
     /**
@@ -130,6 +138,12 @@ class JsonApiAttributes implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['display_name'] === null) {
+            $invalid_properties[] = "'display_name' can't be null";
+        }
+        if ($this->container['extension'] === null) {
+            $invalid_properties[] = "'extension' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -141,10 +155,57 @@ class JsonApiAttributes implements ArrayAccess
      */
     public function valid()
     {
-
+        if ($this->container['display_name'] === null) {
+            return false;
+        }
+        if ($this->container['extension'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets display_name
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name
+     * @param string $display_name displayable name of the version
+     * @return $this
+     */
+    public function setDisplayName($display_name)
+    {
+        $this->container['display_name'] = $display_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets extension
+     * @return \Autodesk\Forge\Client\Model\BaseAttributesExtensionObject
+     */
+    public function getExtension()
+    {
+        return $this->container['extension'];
+    }
+
+    /**
+     * Sets extension
+     * @param \Autodesk\Forge\Client\Model\BaseAttributesExtensionObject $extension
+     * @return $this
+     */
+    public function setExtension($extension)
+    {
+        $this->container['extension'] = $extension;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
