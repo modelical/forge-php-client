@@ -56,6 +56,7 @@ class HubAttributes implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'extension' => '\Autodesk\Forge\Client\Model\BaseAttributesExtensionObject',
+        'region' => 'string',
     ];
 
     /**
@@ -73,6 +74,7 @@ class HubAttributes implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'extension' => 'extension',
+        'region' => 'region',
     ];
 
 
@@ -83,6 +85,7 @@ class HubAttributes implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'extension' => 'setExtension',
+        'region' => 'setRegion',
     ];
 
 
@@ -93,6 +96,7 @@ class HubAttributes implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'extension' => 'getExtension',
+        'region' => 'getRegion',
     ];
 
     public static function attributeMap()
@@ -128,6 +132,7 @@ class HubAttributes implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
     }
 
     /**
@@ -208,6 +213,28 @@ class HubAttributes implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets region
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     * @param string $region Region
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
+
+        return $this;
+    }
+	
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
